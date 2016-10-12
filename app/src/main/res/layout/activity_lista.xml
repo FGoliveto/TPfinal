@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="match_parent" android:focusable="true" android:focusableInTouchMode="true">
+    <TextView
+        style="@style/TextView"
+        android:text="Más cercano..."
+        android:id="@+id/cercano"/>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/TextView"
+            android:id="@+id/filtro_palabraClave"
+            android:text="Filtro por palabra calve:" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:imeActionLabel="Search"
+            android:hint="Ingrese palabra clave..."
+            android:id="@+id/buscadorenlista"
+            android:maxLines="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/TextView"
+            android:id="@+id/filtro_rubro"
+            android:text="Filtrar por rubro:" />
+        <Spinner
+            style="@style/spinner"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:id="@+id/spinner_lista"/>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lista"/>
+</LinearLayout>

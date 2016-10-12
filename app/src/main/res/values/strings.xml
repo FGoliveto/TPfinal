@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mis locales preferidos</string>
+    <string name="action_settings">Settings</string>
+    <string name="permiso">Por favor, es necesario que active los permisos solicitados, caso contrario no podra usar la aplicación. Los permisos se necesitan para guardar sus locales y saber su posición para el calculo de distancia con dichos locales.</string>
+</resources>

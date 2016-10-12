@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        style="@style/Mostrar_datos"
+        android:layout_width="wrap_content"
+        android:textSize="40sp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/dnombre"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/Mostrar_datos"
+            android:layout_width="wrap_content"
+            android:text="Rubro: "/>
+        <TextView
+            style="@style/Mostrar_datos"
+            android:id="@+id/drubro"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/Mostrar_datos"
+            android:text="Descripción:"/>
+        <TextView
+            style="@style/Mostrar_datos"
+            android:id="@+id/ddescripcion"/>
+    </LinearLayout>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:isIndicator="true"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/drating"
+        android:stepSize="1.0" />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/dfoto"
+        android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/Mostrar_datos"
+            android:layout_width="wrap_content"
+            android:text="Telefono: "/>
+        <TextView
+            style="@style/Mostrar_datos"
+            android:id="@+id/dtelefono"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/Mostrar_datos"
+            android:text="Dirección:"/>
+        <TextView
+            style="@style/Mostrar_datos"
+            android:id="@+id/ddireccion"/>
+    </LinearLayout>
+    <fragment
+        android:id="@+id/dmapa"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        class="com.google.android.gms.maps.MapFragment"/>
+    <Button
+        style="@style/Botones_principales"
+        android:layout_width="wrap_content"
+        android:text="Editar"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/editar" />
+</LinearLayout>
+</ScrollView>

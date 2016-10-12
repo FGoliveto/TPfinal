@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#cccccc"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AgregarActivity">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" android:background="#cccccc"
+    android:focusable="true" android:focusableInTouchMode="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:text=" Nuevo local \nsolo en CABA"
+        android:textSize="25sp"/>
+    <EditText
+        style="@style/Ingreso_datos"
+        android:id="@+id/nombre"
+        android:hint="Nombre"
+        android:maxLines="1"
+        android:maxLength="50"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rubro: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"/>
+        <Spinner
+            style="@style/spinner"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:id="@+id/spinner" />
+    </LinearLayout>
+    <EditText
+        style="@style/Ingreso_datos"
+        android:id="@+id/descripcion"
+        android:hint="Descripcion"
+        android:maxLength="500"/>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/rating"
+        android:stepSize="1.0" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:orientation="horizontal">
+        <Button
+            style="@style/Botones_principales"
+            android:layout_width="wrap_content"
+            android:id="@+id/agregarfoto"
+            android:layout_margin="0dp"
+            android:text="Click para agregar foto \n (Opcional)"
+            android:layout_gravity="center_vertical" />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/foto"
+            android:adjustViewBounds="false"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <EditText
+        style="@style/Ingreso_datos"
+        android:id="@+id/telefono"
+        android:hint="Telefono (Opcional)"
+        android:inputType="numberSigned"
+        android:maxLines="1"
+        android:maxLength="30"/>
+    <EditText
+        style="@style/Ingreso_datos"
+        android:id="@+id/direccion"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:imeActionLabel="Search"
+        android:hint="Calle y numero"
+        android:maxLines="1" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/mapaLugar"
+        android:adjustViewBounds="false"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        style="@style/Botones_principales"
+        android:layout_width="wrap_content"
+        android:text="Guardar"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/guardar" />
+    <Button
+        style="@style/Botones_principales"
+        android:layout_width="wrap_content"
+        android:text="Guardar cambios"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/newguardar" />
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:orientation="vertical"
+    android:layout_height="match_parent" tools:context=".MainActivity" android:background="#cccccc">
+    <Button
+        android:text="Agregar Local"
+        android:id="@+id/agregar"
+        style="@style/Botones_principales"/>
+    <Button
+        android:text="Lista de Locales"
+        android:id="@+id/listasimple"
+        style="@style/Botones_principales"/>
+    <Button
+        android:text="Lista ordenada por distancia"
+        android:id="@+id/listaordenada"
+        style="@style/Botones_principales"/>
+    <Button
+        android:text="Explorar en mapa"
+        android:id="@+id/mostrarmapa"
+        style="@style/Botones_principales"/>
+    <TextView
+        style="@style/TextView"
+        android:layout_gravity="center"
+        android:id="@+id/textoDireccion"
+        android:gravity="center_horizontal" />
+    <Button
+        android:text="Actualizar direccion predeterminada"
+        android:id="@+id/adquirirDireccion"
+        style="@style/Botones_principales"/>
+</LinearLayout>
