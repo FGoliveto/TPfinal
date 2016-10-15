@@ -16,6 +16,7 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -178,8 +179,10 @@ public class AgregarActivity extends Activity {
                         CapturaDeMapa direLocal = new CapturaDeMapa();
                         direLocal.execute();
                     }
+                    OcultarTeclado(AgregarActivity.this);
                     return true;
                 }
+                OcultarTeclado(AgregarActivity.this);
                 return false;
             }
         });
@@ -208,13 +211,13 @@ public class AgregarActivity extends Activity {
                         nuevo.putExtra("longitud", longitud);
                         nuevo.putExtra("rubro",tipoLocal);
                         nuevo.putExtra("lugar",lugar);
-                        Toast.makeText(context,"El local "+nombre.getText().toString()+" se guardo correctamente",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context,"El local "+nombre.getText().toString()+" se guardo correctamente",Toast.LENGTH_SHORT).show();
                         Log.i(TAG,"Intent es "+nuevo);
                         setResult(RESULT_OK, nuevo);
                         finish();
                     } else {
                         if (direValida){
-                            Toast.makeText(context, "Faltan datos", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Faltan datos", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context, "La direccion no es correcta, por favor verifique que sea valida", Toast.LENGTH_SHORT).show();
                         }
@@ -249,14 +252,14 @@ public class AgregarActivity extends Activity {
                         valores.put("rubro", tipoLocal);
                         db.update("local", valores, " id = ? ", new String[]{Long.toString(id)});
                         db.close();
-                        Toast.makeText(context,"El local "+nombre.getText().toString()+" se actualizo correctamente",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context,"El local "+nombre.getText().toString()+" se actualizo correctamente",Toast.LENGTH_SHORT).show();
                         Intent cambio = new Intent(context, LocalActivity.class);
                         cambio.putExtra("local", id);
                         AgregarActivity.this.startActivity(cambio);
                         finish();
                     } else {
                         if (direValida) {
-                            Toast.makeText(context, "Faltan datos", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Faltan datos", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(context, "La direccion no es correcta, por favor verifique que sea valida", Toast.LENGTH_SHORT).show();
                         }
@@ -381,6 +384,15 @@ public class AgregarActivity extends Activity {
                 Toast.makeText(context,"Dirección invalida",Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    public static void OcultarTeclado(Activity activity) {
+        Log.i(TAG,"Entro para ocultar el teclado");
+        InputMethodManager iMM = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View view = activity.getCurrentFocus();
+        if (view == null) {
+            view = new View(activity);
+        }
+        iMM.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
     public void onBackPressed(){
         if (!main){
