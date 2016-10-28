@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
     private Context context=SplashActivity.this;
     public static final int CODIGO_AUX =1234;
     public static final int PERMISO =1;
-    public static final String TESTFAIRY = "5d9af96dee6953aaa51fabfb98d1956ad48bab12";
+    public static final String TESTFAIRY = "137419ed3f78f3964c2762bf3a1c3688116d736e";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
